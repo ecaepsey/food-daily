@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = ({ env }) => {
-  const client = env('DATABASE_CLIENT', 'postgres');
-  //postgres://mlqueluswhvdvx:24a6cd1b107e11ad2119a87bc895e137c5f52eab9bc7d840866602035422bd5d@ec2-52-54-200-216.compute-1.amazonaws.com:5432/dd00rh60jparo
+  const client = env('DATABASE_CLIENT', 'sqlite');
+
   const connections = {
     mysql: {
       connection: {
@@ -49,12 +49,12 @@ module.exports = ({ env }) => {
     },
     postgres: {
       connection: {
-        connectionString: env('postgres://mlqueluswhvdvx:24a6cd1b107e11ad2119a87bc895e137c5f52eab9bc7d840866602035422bd5d@ec2-52-54-200-216.compute-1.amazonaws.com:5432/dd00rh60jparo'),
-        host: env('DATABASE_HOST', 'compute-1.amazonaws.com'),
+        connectionString: env('DATABASE_URL'),
+        host: env('DATABASE_HOST', 'localhost'),
         port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'dd00rh60jparo'),
-        user: env('DATABASE_USERNAME', 'mlqueluswhvdvx'),
-        password: env('DATABASE_PASSWORD', '24a6cd1b107e11ad2119a87bc895e137c5f52eab9bc7d840866602035422bd5d@ec2-52-54-200-216'),
+        database: env('DATABASE_NAME', 'strapi'),
+        user: env('DATABASE_USERNAME', 'strapi'),
+        password: env('DATABASE_PASSWORD', 'strapi'),
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
