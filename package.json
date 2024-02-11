@@ -21,9 +21,7 @@
     "react-router-dom": "5.3.4",
     "styled-components": "5.3.3"
   },
-  "author": {
-    "name": "A Strapi developer"
-  },
+  "author": "A Strapi developer",
   "strapi": {
     "uuid": "ee14afc2-8980-4031-a91e-88339f3c7bf8"
   },
@@ -31,5 +29,7 @@
     "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": []
 }
